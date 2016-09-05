@@ -1,0 +1,44 @@
+<mvc:View controllerName="com.corona.controller.Master" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic"
+	xmlns="sap.m">
+	<semantic:MasterPage id="page" navButtonPress="onNavBack" showNavButton="true" title="{masterView>/title}">
+		<semantic:subHeader>
+			<Bar id="headerBar">
+				<contentMiddle>
+					<SearchField id="searchField" search="f_buscar_avisos" showRefreshButton="{= !${device>/support/touch} }"
+						tooltip="{i18n>masterSearchTooltip}" width="100%" placeholder="{i18n>placeHolderBuscar}"/>
+				</contentMiddle>
+			</Bar>
+		</semantic:subHeader>
+		<semantic:content>
+			<PullToRefresh id="pullToRefresh" refresh="onRefresh" visible="{device>/support/touch}"/>
+			<!-- For client side filtering add this to the items attribute:  parameters: {operationMode: 'Client'}}" -->
+			<List busyIndicatorDelay="{masterView>/delay}" growing="true" growingScrollToLoad="true" id="list" items="{/AvisoSet}"
+				mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" noDataText="{masterView>/noDataText}" selectionChange="onSelectionChange"
+				updateFinished="onUpdateFinished">
+				<infoToolbar>
+					<Toolbar active="true" id="filterBar" press="onOpenViewSettings" visible="{masterView>/isFilterBarVisible}">
+						<Title id="filterBarLabel" text="{masterView>/filterBarLabel}"/>
+					</Toolbar>
+				</infoToolbar>
+				<items>
+					<ObjectListItem number="{ path: 'Qmdat', type: 'sap.ui.model.type.Date', pattern: 'yyyyMMdd' }"
+						numberUnit="{ path: 'Mzeit', type: 'sap.ui.model.odata.type.Time'}" press="onSelectionChange" title="{Qmnum}"
+						type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}">
+						<firstStatus>
+							<ObjectStatus state="Success" text="{Qmartx}"/>
+						</firstStatus>
+						<attributes>
+							<ObjectAttribute text="{Name1}"/>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</semantic:content>
+		<semantic:addAction>
+			<semantic:AddAction enabled="{appView>/addEnabled}" id="addButton" press="onAdd" visible="false"/>
+		</semantic:addAction>
+		<semantic:mainAction>
+			<semantic:MainAction id="__action1" press="f_open_dialog_login" text="Login"/>
+		</semantic:mainAction>
+	</semantic:MasterPage>
+</mvc:View>

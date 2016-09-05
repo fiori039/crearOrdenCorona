@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:DataServices m:DataServiceVersion="2.0"
+        xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+        <Schema Namespace="ZGWSD_CREARORDEN_SRV" xml:lang="en"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Aviso" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Arbpl"/>
+                    <PropertyRef Name="Werks"/>
+                    <PropertyRef Name="Qmnum"/>
+                    <PropertyRef Name="Qmart"/>
+                    <PropertyRef Name="Artpr"/>
+                    <PropertyRef Name="Rbnr"/>
+                </Key>
+                <Property Name="Arbpl" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Work Center" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plt for WorkCtr" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Qmnum" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Notification" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Qmart" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Notifictn type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Artpr" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="PriorityType" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmdat" Type="Edm.DateTime" Nullable="false" sap:label="Notif.date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Mzeit" Type="Edm.Time" Nullable="false" sap:label="Notif. Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmtxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Rbnr" Type="Edm.String" Nullable="false" MaxLength="9" sap:label="Catalog profile" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Statusr" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="User Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Priori" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Priority" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmgrp" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Code group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmcod" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Coding" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Adrnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Address number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name2" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Name 2" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60" sap:label="Street" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Street2" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Street 3" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="City1" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tele" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Telephone" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Celu" Type="Edm.String" Nullable="false" MaxLength="30" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bita" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pric" Type="Edm.String" Nullable="false" MaxLength="2" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Orden" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Qmnum"/>
+                </Key>
+                <Property Name="Carac" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Qmnum" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Notification" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Arbpl" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Main WorkCtr" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plt for WorkCtr" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="Material" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Vtweg"/>
+                    <PropertyRef Name="Vkorg"/>
+                    <PropertyRef Name="Matnr"/>
+                </Key>
+                <Property Name="Mtart" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Material Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vtweg" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Distr. Channel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vkorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Sales Org." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="materialCaract" Relationship="ZGWSD_CREARORDEN_SRV.MaterialAS" FromRole="FromRole_MaterialAS" ToRole="ToRole_MaterialAS"/>
+            </EntityType>
+            <EntityType Name="CaractMaterial" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Name"/>
+                    <PropertyRef Name="Matnr"/>
+                </Key>
+                <Property Name="Obli" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Entry Required" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Numb" Type="Edm.Int16" Nullable="false" sap:label="Number of Chars" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Format" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Curi" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Curr" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Base" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Base unit ISO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Unite" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="Technical" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Unit" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Int. unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="Addit" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Addnl Values" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Entry" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Entry Required" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Descr" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Characteristic" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <NavigationProperty Name="caracteristicaMaterial" Relationship="ZGWSD_CREARORDEN_SRV.caracteristicaMaterialAs" FromRole="FromRole_caracteristicaMaterialAs" ToRole="ToRole_caracteristicaMaterialAs"/>
+            </EntityType>
+            <EntityType Name="ValueCarctMaterial" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Name"/>
+                    <PropertyRef Name="Matnr"/>
+                    <PropertyRef Name="Value"/>
+                </Key>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Characteristic" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Char. Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Descr" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Numva" Type="Edm.Double" Nullable="false" sap:label="Value from" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Numvt" Type="Edm.Double" Nullable="false" sap:label="Value to" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currf" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="4" sap:label="Currency amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currt" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="4" sap:label="Currency amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Valre" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Charv" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Char. Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Centro" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Werks"/>
+                </Key>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Name 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="PuestoTrabajo" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <Key>
+                    <PropertyRef Name="Werks"/>
+                    <PropertyRef Name="Arbpl"/>
+                </Key>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Arbpl" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Work center" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Denomi" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="MaterialAS" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <End Type="ZGWSD_CREARORDEN_SRV.Material" Multiplicity="1" Role="FromRole_MaterialAS"/>
+                <End Type="ZGWSD_CREARORDEN_SRV.CaractMaterial" Multiplicity="*" Role="ToRole_MaterialAS"/>
+            </Association>
+            <Association Name="caracteristicaMaterialAs" sap:content-version="1"
+                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                <End Type="ZGWSD_CREARORDEN_SRV.CaractMaterial" Multiplicity="1" Role="FromRole_caracteristicaMaterialAs"/>
+                <End Type="ZGWSD_CREARORDEN_SRV.ValueCarctMaterial" Multiplicity="*" Role="ToRole_caracteristicaMaterialAs"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_caracteristicaMaterialAs">
+                        <PropertyRef Name="Name"/>
+                        <PropertyRef Name="Matnr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_caracteristicaMaterialAs">
+                        <PropertyRef Name="Name"/>
+                        <PropertyRef Name="Matnr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZGWSD_CREARORDEN_SRV" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="OrdenSet" EntityType="ZGWSD_CREARORDEN_SRV.Orden" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"
+                    xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                    <EntitySet Name="MaterialSet" EntityType="ZGWSD_CREARORDEN_SRV.Material" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"
+                        xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                        <EntitySet Name="CaractMaterialSet" EntityType="ZGWSD_CREARORDEN_SRV.CaractMaterial" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"
+                            xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                            <EntitySet Name="ValueCarctMaterialSet" EntityType="ZGWSD_CREARORDEN_SRV.ValueCarctMaterial" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"
+                                xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                                <EntitySet Name="CentroSet" EntityType="ZGWSD_CREARORDEN_SRV.Centro" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"
+                                    xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                                    <EntitySet Name="PuestoTrabajoSet" EntityType="ZGWSD_CREARORDEN_SRV.PuestoTrabajo" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"
+                                        xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                                        <EntitySet Name="AvisoSet" EntityType="ZGWSD_CREARORDEN_SRV.Aviso" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:content-version="1"
+                                            xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                                            <AssociationSet Name="caracteristicaMaterialSet" Association="ZGWSD_CREARORDEN_SRV.caracteristicaMaterialAs" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"
+                                                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                                                <End EntitySet="CaractMaterialSet" Role="FromRole_caracteristicaMaterialAs"/>
+                                                <End EntitySet="ValueCarctMaterialSet" Role="ToRole_caracteristicaMaterialAs"/>
+                                            </AssociationSet>
+                                            <AssociationSet Name="materialSet" Association="ZGWSD_CREARORDEN_SRV.MaterialAS" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"
+                                                xmlns:sap="http://www.sap.com/Protocols/SAPData">
+                                                <End EntitySet="MaterialSet" Role="FromRole_MaterialAS"/>
+                                                <End EntitySet="CaractMaterialSet" Role="ToRole_MaterialAS"/>
+                                            </AssociationSet>
+                                        </EntityContainer>
+                                        <atom:link rel="self" href="./sap/ZGWSD_CREARORDEN_SRV/$metadata"
+                                            xmlns:atom="http://www.w3.org/2005/Atom"/>
+                                            <atom:link rel="latest-version" href="./sap/ZGWSD_CREARORDEN_SRV/$metadata"
+                                                xmlns:atom="http://www.w3.org/2005/Atom"/>
+                                            </Schema>
+                                        </edmx:DataServices>
+                                    </edmx:Edmx>

@@ -1,0 +1,24 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	
+	<SelectDialog
+		id="list_Material"
+		title="Seleccione Material"
+		class="sapUiPopupWithPadding"
+				
+		
+		items="{
+			path : '/MaterialSet'
+		}"
+		
+		search="f_Search_material"
+		confirm="f_confirm_material"
+		cancel="f_confirm_material"
+		>
+		
+		<StandardListItem
+			title="{Matnr}"
+			description="{Maktx}" />
+	</SelectDialog>
+</core:FragmentDefinition>

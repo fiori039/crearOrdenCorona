@@ -1,0 +1,68 @@
+<mvc:View controllerName="com.corona.controller.Detail" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic" xmlns="sap.m">
+	<semantic:DetailPage busy="{detailView&gt;/busy}" busyIndicatorDelay="{detailView&gt;/delay}" id="page" navButtonPress="onNavBack"
+		showNavButton="{device&gt;/system/phone}" title="{i18n&gt;detailTitle}">
+		<semantic:content>
+			<ObjectHeader id="objectHeader" intro="{Werks} - {Puest}" number="" title="Número Aviso: {Qmnum}"/>
+			<Label id="labelMaterial" text="Material"></Label>
+			<Input id="inputMaterial" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="f_ayuda_busqueda_material"
+			placeholder="{i18n>placeHoldeMaterial}"></Input>
+			<Label id="labelInicio" text="Inicio" visible="false"></Label>
+			<DatePicker editable="false" enabled="true" id="dateFecha" visible="false"></DatePicker>
+			<Input editable="false" id="inputFecha" type="Text" value="{path: '/myDate', type:'sap.ui.model.type.Date'}" visible="false"></Input>
+			<Table backgroundDesign="Translucent" enableBusyIndicator="true" fixedLayout="true" footerText="" growing="false"
+				growingScrollToLoad="false" growingThreshold="20" growingTriggerText="" headerDesign="Standard" headerText="" id="tableCaracteristicas"
+				includeItemInSelection="false" itemPress="" items="{/CaractMaterialSet}" mode="None" modeAnimationOn="true"
+				noDataText="{i18n&gt;caracteristicas}" rememberSelections="true" showNoData="true" showOverlay="false" showSeparators="All"
+				showUnread="false" swipeDirection="Both" visible="false" width="100%">
+				<items>
+					<ColumnListItem counter="0" id="__item12">
+						<cells>
+							<Input editable="false" id="inputCaractMaterialItem" textAlign="Center" type="Text" value="{Descr}"/>
+							<Input extAlign="Center" id="inputValorCaractMaterialItem" showValueHelp="true" type="{= ${Unit} !== '' ? 'Number' : 'Text'}" value="{Value}"
+								valueHelpRequest="f_ayuda_busqueda_caracteristica"  valueHelpOnly="{= ${Addit} !== '' ? false : true}"
+								placeholder="{= ${Addit} !== '' ? 'Seleccione o escriba acaracterística del material' : 'Seleccione característica del material' }"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column hAlign="Center" id="__columnfmoderno4">
+						<header>
+							<Label design="Bold" id="labelMaterialItemColumn" text="Característica Material" textAlign="Center"/>
+						</header>
+					</Column>
+					<Column hAlign="Center" id="__columnfmoderno5">
+						<header>
+							<Label design="Bold" id="labelValorMaterialItem" text="Valor Característica Material" textAlign="Center"/>
+						</header>
+					</Column>
+				</columns>
+			</Table>
+			<!--<IconTabBar class="sapUiResponsiveContentPadding" id="iconTabBar">-->
+			<!--	<items>-->
+			<!--		<IconTabFilter icon="sap-icon://hint" id="iconTabBarFilter1" tooltip="{i18n&gt;detailIconTabBarInfo}"/>-->
+			<!--		<IconTabFilter icon="sap-icon://attachment" id="iconTabBarFilter2" tooltip="{i18n&gt;detailIconTabBarAttachments}"/>-->
+			<!--	</items>-->
+			<!--</IconTabBar>-->
+		</semantic:content>
+		<!--<semantic:editAction>-->
+		<!--<semantic:EditAction id="edit" press="onEdit" visible="false"/>-->
+		<!--</semantic:editAction>-->
+		<!--<semantic:customFooterContent>-->
+		<!--	<Button enabled="true" id="deleteButton" press="onDelete" text="Delete" visible="false"/>-->
+		<!--</semantic:customFooterContent>-->
+		<!--<semantic:sendEmailAction>-->
+		<!--	<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress" visible="false"/>-->
+		<!--</semantic:sendEmailAction>-->
+		<!--<semantic:shareInJamAction>-->
+		<!--<semantic:ShareInJamAction id="shareInJam" press="onShareInJamPress" visible="{FLP&gt;/isShareInJamActive}"/>-->
+		<!--	<semantic:ShareInJamAction id="shareInJam" press="onShareInJamPress" visible="false"/>-->
+		<!--</semantic:shareInJamAction>-->
+		<!--<semantic:saveAsTileAction>-->
+		<!--	<footerbar:AddBookmarkButton id="shareTile" title="{detailView&gt;/saveAsTileTitle}" visible="false"/>-->
+		<!--</semantic:saveAsTileAction>-->
+		<semantic:mainAction>
+			<semantic:MainAction id="createOrden" press="f_crearOrden" text="Crear Orden"/>
+		</semantic:mainAction>
+	</semantic:DetailPage>
+</mvc:View>
